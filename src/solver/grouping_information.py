@@ -1,5 +1,5 @@
-from src.solver.parser import ParseInput
-from src.solver.const import RANK
+from .parser import ParseInput
+from .const import RANK
 
 
 class GroupingInformation:

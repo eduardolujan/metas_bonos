@@ -1,8 +1,14 @@
 import os
+import sys
+from pprint import pprint
 
-from src.solver.reader import FileInputReader
-from src.solver.parser import JsonParseInput
-from src.solver.grouping_information import GroupingInformation
+current_path = os.path.dirname(__file__)
+if sys.path:
+    sys.path.append(current_path)
+
+from solver.reader import FileInputReader
+from solver.parser import JsonParseInput
+from solver.grouping_information import GroupingInformation
 
 
 def main():
@@ -12,7 +18,7 @@ def main():
     json_parse_input = JsonParseInput(file_input_reader)
     grouping_information = GroupingInformation(json_parse_input)
     teams = grouping_information.get_grouping()
-    pass
+    pprint(teams)
 
 if __name__ == '__main__':
     main()
